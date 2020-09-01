@@ -1,3 +1,14 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{faziludeen_ecg_2013}
+S.~Faziludeen and P.~V. Sabiq.
+\newblock {ECG} beat classification using wavelets and {SVM}.
+\newblock In {\em 2013 {IEEE} {Conference} on {Information} {Communication}
+  {Technologies}}, pages 815--818, Apr. 2013.
+
+\bibitem{haykin_neural_2010}
+S.~Haykin.
+\newblock {\em Neural Networks and Learning Machines, 3/E}.
+\newblock Pearson Education India, 2010.
 
 \end{thebibliography}
