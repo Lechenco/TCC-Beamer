@@ -6,6 +6,9 @@
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 
+\usepackage{tabulary}
+\usepackage[normalem]{ulem}
+
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot}
 
@@ -154,20 +157,96 @@ Cristiano Marcos Agulhari}
     
 \end{frame}
 
-\section{Trabalhos Relacionados}
+\section{Revisão de Literatura}
+
+\begin{frame}{Trabalhos Relacionados}
+
+  \only<1>{
+    \begin{table}
+      \begin{tabulary}{\textwidth}{|C|C|}
+          \hline
+          Trabalho                               & Técnica   \\ \hline
+          Govindan, Deng e Power (1997)  & Coeficientes Wavelet + Redes Neurais                                                      \\ \hline
+          Zhao e Zhang (2005)        & Coeficientes Wavelet + SVM  + Modelagem Autorregressiva     \\ \hline
+          Mora e Amaya (2012)         & Entropia de Shannon + Complexidade de Lempel-Ziv + SVM-OAO assimétrica   \\ \hline
+          Rua et al. (2012)           & Energia Wavelet + Redes Neurais                                                                                      \\ \hline
+          Azariadi et al. (2016)          & Coeficientes Wavelet +   SVM            \\ \hline
+          Tuncer et al. (2019)      & Decomposição Wavelet +  Localização de padrões  locais hexadecimais +  KNN  \\ \hline
+      \end{tabulary}
+    \end{table}
+  }
+
+  \only<2>{
+    \begin{tabulary}{\textwidth}{|C|c|c|c|}
+      \hline
+      Trabalho                                                                          & Nº de classes & \begin{tabular}[c]{@{}l@{}}Nº de Exemplos \\no treinamento \end{tabular} & Acurácia       \\ \hline
+      Govindan, Deng e Power (1997)                                            & $4$                                                            &                      $10$                            & $77\% \pm 9\%$ \\ \hline
+      Zhao e Zhang (2005)                                                  & $6$                                                           &                 $7940$                                & $99,68\%$      \\ \hline
+      Mora e Amaya (2012)                                                   & $5$                                                            &                $637$                                 & $90,72\%$      \\ \hline
+      Rua et al. (2012)                                                     & $2$                                                           &               -                               & $99.46\%$      \\ \hline
+      Azariadi et al. (2016)                                                    & $2$                                                           &                      104581                         & $97\%$         \\ \hline
+      Tuncer et al. (2019)                                                & $17$                                                        &                        -                        & $95.0\%$       \\ \hline
+  \end{tabulary}
+  }
+
+\end{frame}
 
 \section{Proposta}
 
 \begin{frame}{Proposta}
-    
+  \only<1>{
+    \begin{figure}[]
+        \centering
+        \includegraphics[height=6cm]{images/proposal.png}
+        \caption{Descrição do Método que será utilizado}
+      \end{figure}
+  }
+  
+  \only<2>{
+    Bases de dados
+    \begin{itemize}
+      \item MIT-BIH Arrhythmia Database(mitdb)
+      \item MIT-BIH Normal SinusRhythm Database(nsrdb)
+    \end{itemize}
+  }
 \end{frame}
 
 \begin{frame}{Pré-processamento}
-    
+    \only<1> {
+      Localizar e seccionar trechos selecionados:
+      \begin{itemize}
+        \item Ler anotações e comentários presentes nas bases de dados
+        \item Localizar o início e término de eventos arrítmicos
+        \item Seccionar trechos a cada 8 segundos
+        \item Fazer o mesmo para os dados saudáveis
+      \end{itemize}
+    }
+
+    \only<2,3>{
+      Padronizar sinais
+      \begin{itemize}
+        \item mitdb: $F_s = 360 Hz$
+        \item nrsdb: $F_s = 128 Hz$
+        \visible<3>{\item Padronizar todos com $128 Hz$}
+      \end{itemize}
+    }
+\end{frame}
+
+\begin{frame}{Extração de características}
+  \begin{figure}[]
+    \centering
+    \includegraphics[width=10.5cm]{images/waveletProposal.png}
+    \caption{Decomposição Wavelet proposta}
+  \end{figure}
 \end{frame}
 
 \begin{frame}{Aprendizado de Máquina}
-    
+    Máquinas de Vetores de Suporte (SVM)
+    \begin{itemize}
+      \item Aprendizado supervisionado
+      \item Classificação entre 4 classes
+      \item Comparação entre técnicas de classificação multiclasses
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Testes e resultados}
@@ -175,7 +254,30 @@ Cristiano Marcos Agulhari}
 \end{frame}
 
 \begin{frame}{Cronograma}
-    
+  \only<1>{
+    \begin{tabulary}{\textwidth}{|l|C|}
+      \hline
+      Data        & Atividade                                                                                    \\ \hline
+      14/Agosto   & Selecionar trechos relevantes dos sinais biológicos com base nas anotações do banco de dados \\ \hline
+      28/Agosto   & Realizar o janelamento e padronização destes trechos                                         \\ \hline
+      11/Setembro & Extrair Energias Wavelet                                                                     \\ \hline
+      02/Outubro  & Realizar Classificações                                                                      \\ \hline
+      23/Outubro  & Agrupar Resultados                                                                           \\ \hline
+      20/Novembro & Descrever Resultados e Conclusões finais                                                     \\ \hline
+      \end{tabulary}
+  }
+  \only<2>{
+    \begin{tabulary}{\textwidth}{|l|C|}
+      \hline
+      Data        & Atividade                                                                                    \\ \hline
+      14/Agosto   & \sout{Selecionar trechos relevantes dos sinais biológicos com base nas anotações do banco de dados} \\ \hline
+      28/Agosto   & \sout{Realizar o janelamento e padronização destes trechos                                        } \\ \hline
+      11/Setembro & Extrair Energias Wavelet                                                                     \\ \hline
+      02/Outubro  & Realizar Classificações                                                                      \\ \hline
+      23/Outubro  & Agrupar Resultados                                                                           \\ \hline
+      20/Novembro & Descrever Resultados e Conclusões finais                                                     \\ \hline
+      \end{tabulary}
+  }
 \end{frame}
 
 \section{Considerações Finais}
