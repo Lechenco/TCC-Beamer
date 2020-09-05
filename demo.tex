@@ -148,13 +148,76 @@ Cristiano Marcos Agulhari}
   }
   \only<2>{\textit{One Against One} (OAO)}
   \only<3>{\textit{One Against All} (OAA)}
-  \only<4>{\textit{Directed Acyclic Graph SVM} (DAGSVM)}
-  \only<5>{\textit{Binary Tree of SVM} (BTS)}
+  \only<4>{\textit{Directed Acyclic Graph SVM} (DAGSVM)
+    \begin{figure}[]
+      \centering
+      \includegraphics[width=6cm]{images/dagSVM.png}
+    \end{figure}
+  }
+  \only<5>{\textit{Binary Tree of SVM} (BTS)
+    \begin{figure}[]
+      \centering
+      \includegraphics[width=7cm]{images/btsSample.png}
+    \end{figure}
+  }
 
 \end{frame}
 
 \begin{frame}{Wavelet}
-    
+  \only<1>{
+    A Transformada de Fourier é amplamente utilizada no processamento de sinais digitais, 
+    porém, ela pode não ser a mais adequada em alguns casos.
+
+    Transformadas wavelet são mais apropriadas para a análise de fenômenos não 
+    estacionários ou variantes no tempo.
+  }
+  \only<2> {
+      \begin{figure}[]
+        \centering
+        \includegraphics[width=10cm]{images/waveAndWavelet.png}
+        \caption{Onda de energia e infinita e wavelet de energia concentrada}
+      \end{figure}
+    }
+
+    \only<3> {
+      Características das funções Wavelet:
+      \begin{itemize}
+        \item Infinitas funções wavelet disponíveis
+        \item Localização em tempo-frequência (Escala e Translação)
+        \item Multirresolução
+      \end{itemize}
+    }
+\end{frame}
+
+\begin{frame}{Multirresolução}
+
+  \begin{figure}[]
+    \centering
+    \includegraphics[width=10cm]{images/multiresolution.png}
+    \caption{Resolução no tempo-frequência STFT e Decomposição Wavelet}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}{\textit{Filter Bank} e \textit{Wavelet Packets}}
+
+  \only<1> {
+    Ao tentar otimizar a propriedade de multirresolução, os \textit{Filter Banks}
+    combinam as decomposições multiníveis em uma árvore binária, construindo 
+    uma coleção de filtros passa-baixa e passa-alta.
+
+    Enquanto que as \textit{Wavelet Packets} procuram uma análise mais completa 
+    dos filtros, a partir de uma decomposição binária.
+  }
+
+  \only<2> {
+    \begin{figure}[]
+      \centering
+      \includegraphics[width=10cm]{images/filterBankPacket.png}
+      \caption{Árvores de Decomposição Wavelet}
+    \end{figure}
+  }
+
 \end{frame}
 
 \section{Revisão de Literatura}

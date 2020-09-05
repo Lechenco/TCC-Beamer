@@ -1,5 +1,5 @@
 \beamer@sectionintoc {1}{Introdução}{3}{0}{1}
 \beamer@sectionintoc {2}{Fundamentação Teórica}{6}{0}{2}
-\beamer@sectionintoc {3}{Revisão de Literatura}{24}{0}{3}
-\beamer@sectionintoc {4}{Proposta}{27}{0}{4}
-\beamer@sectionintoc {5}{Considerações Finais}{38}{0}{5}
+\beamer@sectionintoc {3}{Revisão de Literatura}{29}{0}{3}
+\beamer@sectionintoc {4}{Proposta}{32}{0}{4}
+\beamer@sectionintoc {5}{Considerações Finais}{43}{0}{5}
