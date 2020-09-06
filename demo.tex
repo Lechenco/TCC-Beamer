@@ -37,12 +37,18 @@ Cristiano Marcos Agulhari}
 \section{Introdução}
 
 \begin{frame}{Introdução}
-    Uma rede pode ser dividida nos seguintes planos:
+    Doenças cardiovasulares
     \begin{itemize}
-        \alert<2>{\item Plano de Dados}
-        \alert<2>{\item Plano de Controle}
-        \item Plano de Gerenciamento
+        \item Foram responsáveis por um terço das mortes em 2016
+        \item Três quartos dessas ocorreram em países de baixa e média renda
+        \item A principal causa das mortes são diagnóstico feito tardiamente
     \end{itemize}
+\end{frame}
+
+\begin{frame} {Justificativa}
+  O desenvolvimento de modelos computacionais com a capacidade de identificar 
+  artefatos de arritmia podem auxiliar em um diagnóstico mais rápido de doenças 
+  cardiovasculares.
 \end{frame}
 
 \section{Fundamentação Teórica}
@@ -66,9 +72,9 @@ Cristiano Marcos Agulhari}
     \end{itemize}
   }
 
-  \only<2>{Imagem taquicardia ventricular}
+  % \only<2>{Imagem taquicardia ventricular}
   
-  \only<3>{Imagem fibrilação ventricular}
+  % \only<3>{Imagem fibrilação ventricular}
 \end{frame}
 
 \begin{frame}{Máquinas de Vetores de Suporte (SVM)}
@@ -90,26 +96,26 @@ Cristiano Marcos Agulhari}
         \label{fig:svm}
       \end{figure}
     }
-    \only<3,4>{
-      Vantagens 
-      \begin{itemize}
-        \item Otimização de natureza convexa
-        \item Apresenta um unico mínimo global para problemas lineares
-        \item Consegue bons resultados com poucos exemplos
-      \end{itemize}
+\end{frame}
 
-      \visible<4>{
-        Desvantagens
-        \begin{itemize}
-          \item A princípio resolve apenas problemas lineares
-          \item Classificação binária
-        \end{itemize}
-      }
-    }
+\begin{frame}{Máquinas de Vetores de Suporte (SVM)}
+  Vantagens 
+  \begin{itemize}
+    \item Otimização de natureza convexa
+    \item Apresenta um unico mínimo global para problemas lineares
+    \item Consegue bons resultados com poucos exemplos
+  \end{itemize}
+
+  \visible<2>{
+    Desvantagens
+    \begin{itemize}
+      \item A princípio resolve apenas problemas lineares
+      \item Classificação binária
+    \end{itemize}
+  }
 \end{frame}
 
 \begin{frame}{SVM's e problemas não lineares}
-  \only<1>{
     \textbf{Teorema de Cover}
     \begin{quote}
       Dado um problema de classificação de padrões complexo, ao lançá-lo em 
@@ -117,22 +123,23 @@ Cristiano Marcos Agulhari}
       separável do que em um espaço com poucas dimensões, desde que o espaço não seja densamente preenchido.
       \cite{haykin_neural_2010}
     \end{quote}
-  }
-  \only<2>{
-    A adição de diferentes kernels possibilita uma maior flexibilidade do algoritmo de
-    SVM com uma pequena modificação no problema de otimização.
-    \begin{equation}
-      f(x) = \langle w, \psi(x) \rangle + b = 0
-      \nonumber
-    \end{equation}
-  }
-  \only<3>{
-    \begin{figure}
-      \centering
-      \includegraphics[width=6cm]{images/svmXor.png}
-      \caption{SVM utilizando o kernel gaussiano para o problema XOR}
-    \end{figure}
-  }
+\end{frame}
+
+\begin{frame} {SVM's e problemas não lineares}
+  A adição de diferentes kernels possibilita uma maior flexibilidade do algoritmo de
+  SVM com uma pequena modificação no problema de otimização.
+  \begin{equation}
+    f(x) = \langle w, \psi(x) \rangle + b = 0
+    \nonumber
+  \end{equation}
+\end{frame}
+
+\begin{frame}{Problema XOR}
+  \begin{figure}
+    \centering
+    \includegraphics[width=6cm]{images/svmXor.png}
+    \caption{SVM utilizando o kernel gaussiano para o problema XOR}
+  \end{figure}
 \end{frame}
 
 \begin{frame}{SVM's e problemas não binários}
@@ -140,21 +147,20 @@ Cristiano Marcos Agulhari}
   \only<1>{
     Técnicas pra classificação não binária
     \begin{itemize}
-      \item \textit{One Against One} (OAO)
       \item \textit{One Against All} (OAA)
+      \item \textit{One Against One} (OAO)
       \item \textit{Directed Acyclic Graph SVM} (DAGSVM)
       \item \textit{Binary Tree of SVM} (BTS)
     \end{itemize}
   }
-  \only<2>{\textit{One Against One} (OAO)}
-  \only<3>{\textit{One Against All} (OAA)}
-  \only<4>{\textit{Directed Acyclic Graph SVM} (DAGSVM)
+
+  \only<2>{\textit{Directed Acyclic Graph SVM} (DAGSVM)
     \begin{figure}[]
       \centering
       \includegraphics[width=6cm]{images/dagSVM.png}
     \end{figure}
   }
-  \only<5>{\textit{Binary Tree of SVM} (BTS)
+  \only<3>{\textit{Binary Tree of SVM} (BTS)
     \begin{figure}[]
       \centering
       \includegraphics[width=7cm]{images/btsSample.png}
@@ -163,31 +169,31 @@ Cristiano Marcos Agulhari}
 
 \end{frame}
 
-\begin{frame}{Wavelet}
-  \only<1>{
+\begin{frame}{Wavelets}
     A Transformada de Fourier é amplamente utilizada no processamento de sinais digitais, 
     porém, ela pode não ser a mais adequada em alguns casos.
 
     Transformadas wavelet são mais apropriadas para a análise de fenômenos não 
     estacionários ou variantes no tempo.
-  }
-  \only<2> {
-      \begin{figure}[]
-        \centering
-        \includegraphics[width=10cm]{images/waveAndWavelet.png}
-        \caption{Onda de energia e infinita e wavelet de energia concentrada}
-      \end{figure}
-    }
-
-    \only<3> {
-      Características das funções Wavelet:
-      \begin{itemize}
-        \item Infinitas funções wavelet disponíveis
-        \item Localização em tempo-frequência (Escala e Translação)
-        \item Multirresolução
-      \end{itemize}
-    }
 \end{frame}
+
+\begin{frame} {Wavelets}
+  \begin{figure}[]
+    \centering
+    \includegraphics[width=10cm]{images/waveAndWavelet.png}
+    \caption{Onda de energia e infinita e wavelet de energia concentrada}
+  \end{figure}
+\end{frame}
+
+\begin{frame} {Wavelets}
+  Características das funções Wavelet:
+  \begin{itemize}
+    \item Infinitas funções wavelet disponíveis
+    \item Localização em tempo-frequência (Escala e Translação)
+    \item Multirresolução
+  \end{itemize}
+\end{frame}
+
 
 \begin{frame}{Multirresolução}
 
@@ -268,53 +274,68 @@ Cristiano Marcos Agulhari}
   \only<2>{
     Bases de dados
     \begin{itemize}
-      \item MIT-BIH Arrhythmia Database(mitdb)
-      \item MIT-BIH Normal SinusRhythm Database(nsrdb)
+      \item MIT-BIH Arrhythmia Database (mitdb)
+      \item MIT-BIH Normal SinusRhythm Database (nsrdb)
     \end{itemize}
   }
 \end{frame}
 
 \begin{frame}{Pré-processamento}
-    \only<1> {
-      Localizar e seccionar trechos selecionados:
-      \begin{itemize}
-        \item Ler anotações e comentários presentes nas bases de dados
-        \item Localizar o início e término de eventos arrítmicos
-        \item Seccionar trechos a cada 8 segundos
-        \item Fazer o mesmo para os dados saudáveis
-      \end{itemize}
-    }
-
-    \only<2,3>{
-      Padronizar sinais
-      \begin{itemize}
-        \item mitdb: $F_s = 360 Hz$
-        \item nrsdb: $F_s = 128 Hz$
-        \visible<3>{\item Padronizar todos com $128 Hz$}
-      \end{itemize}
-    }
+  Localizar e seccionar trechos selecionados:
+  \begin{itemize}
+    \item Ler anotações e comentários presentes nas bases de dados
+    \item Localizar o início e término de eventos arrítmicos
+    \item Seccionar trechos a cada 8 segundos
+    \alert<2>{\item Padronizar taxa de amostragem para $128 Hz$}
+    \item Fazer o mesmo para os dados saudáveis
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Extração de características}
-  \begin{figure}[]
-    \centering
-    \includegraphics[width=10.5cm]{images/waveletProposal.png}
-    \caption{Decomposição Wavelet proposta}
-  \end{figure}
+  \only<1>{
+    Cada trecho de sinal será decomposto até o quarto nível, no final a folha 
+    mais a esquerda será decomposta por mais dois níveis. Será utilizada a 
+    função \textit{Daubechies} com suporte 3, por se adequar bem aos sinais cardíacos.
+  }
+  \only<2> {
+    \begin{figure}[]
+      \centering
+      \includegraphics[width=10.5cm]{images/waveletProposal.png}
+      \caption{Decomposição Wavelet proposta}
+    \end{figure}
+  }
 \end{frame}
 
 \begin{frame}{Aprendizado de Máquina}
+  \only<1> {
     Máquinas de Vetores de Suporte (SVM)
     \begin{itemize}
       \item Aprendizado supervisionado
       \item Classificação entre 4 classes
       \item Comparação entre técnicas de classificação multiclasses
     \end{itemize}
+  }
+
+  \only<2>{
+    Classificação entre 4 classes
+    \begin{table}
+      \centering
+    \begin{tabular}{|c|c|}
+      \hline
+      Sigla   & Classe                        \\ \hline
+      N       & Batimentos com ritmos normais \\ \hline
+      AFIB    & Fibrilação Arterial           \\ \hline
+      SBR     & Bradicardia Sinusal           \\ \hline
+      ASV     & Arritmia Supraventricular     \\ \hline
+
+    \end{tabular}
+  \end{table}
+  }
 \end{frame}
 
-\begin{frame}{Testes e resultados}
+% \begin{frame}{Testes e resultados}
     
-\end{frame}
+% \end{frame}
 
 \begin{frame}{Cronograma}
   \only<1>{
@@ -345,15 +366,11 @@ Cristiano Marcos Agulhari}
 
 \section{Considerações Finais}
 
-\begin{frame}{Considerações Finais}
-    
-\end{frame}
-
-{\setbeamercolor{palette primary}{fg=white, bg=mDarkTeal}
-\begin{frame}[standout]
-  Perguntas?
-\end{frame}
-}
+% {\setbeamercolor{palette primary}{fg=white, bg=mDarkTeal}
+% \begin{frame}[standout]
+%   Perguntas?
+% \end{frame}
+% }
 
 \appendix
 
