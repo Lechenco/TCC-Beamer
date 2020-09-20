@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.7)  14 SEP 2020 22:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.7)  20 SEP 2020 19:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -906,153 +906,157 @@ File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 
 ] [6
 
+] [7
+
 ]
-<images/pqrst.png, id=84, 153.2124pt x 102.1416pt>
+<images/pqrst.png, id=90, 153.2124pt x 102.1416pt>
 File: images/pqrst.png Graphic file (type png)
 <use images/pqrst.png>
-Package pdftex.def Info: images/pqrst.png  used on input line 63.
+Package pdftex.def Info: images/pqrst.png  used on input line 69.
 (pdftex.def)             Requested size: 227.62204pt x 151.75632pt.
- [7
+ [8
 
- </home/lechenco/dev/TCC-Beamer/images/pqrst.png>] [8
+ </home/lechenco/dev/TCC-Beamer/images/pqrst.png>] [9
 
 ]
-<images/normal.png, id=99, 821.469pt x 422.5386pt>
+<images/normal.png, id=104, 821.469pt x 422.5386pt>
 File: images/normal.png Graphic file (type png)
 <use images/normal.png>
-Package pdftex.def Info: images/normal.png  used on input line 95.
+Package pdftex.def Info: images/normal.png  used on input line 101.
 (pdftex.def)             Requested size: 298.75394pt x 153.67404pt.
- [9
-
- </home/lechenco/dev/TCC-Beamer/images/normal.png (PNG copy)>]
-<images/artrial_fibri.png, id=105, 820.5054pt x 422.0568pt>
-File: images/artrial_fibri.png Graphic file (type png)
-<use images/artrial_fibri.png>
-Package pdftex.def Info: images/artrial_fibri.png  used on input line 95.
-(pdftex.def)             Requested size: 298.75394pt x 153.6727pt.
  [10
 
- </home/lechenco/dev/TCC-Beamer/images/artrial_fibri.png (PNG copy)>] [11
+ </home/lechenco/dev/TCC-Beamer/images/normal.png (PNG copy)>]
+<images/artrial_fibri.png, id=110, 820.5054pt x 422.0568pt>
+File: images/artrial_fibri.png Graphic file (type png)
+<use images/artrial_fibri.png>
+Package pdftex.def Info: images/artrial_fibri.png  used on input line 101.
+(pdftex.def)             Requested size: 298.75394pt x 153.6727pt.
+ [11
+
+ </home/lechenco/dev/TCC-Beamer/images/artrial_fibri.png (PNG copy)>] [12
 
 ]
-<images/svmSample.png, id=119, 676.77844pt x 308.65312pt>
+<images/svmSample.png, id=124, 676.77844pt x 308.65312pt>
 File: images/svmSample.png Graphic file (type png)
 <use images/svmSample.png>
-Package pdftex.def Info: images/svmSample.png  used on input line 116.
+Package pdftex.def Info: images/svmSample.png  used on input line 122.
 (pdftex.def)             Requested size: 284.52756pt x 129.76529pt.
- [12
+ [13
 
- </home/lechenco/dev/TCC-Beamer/images/svmSample.png>] [13
-
-] [14
+ </home/lechenco/dev/TCC-Beamer/images/svmSample.png>] [14
 
 ] [15
 
 ] [16
 
+] [17
+
 ]
-<images/svmXor.png, id=151, 515.01884pt x 521.10474pt>
+<images/svmXor.png, id=156, 515.01884pt x 521.10474pt>
 File: images/svmXor.png Graphic file (type png)
 <use images/svmXor.png>
-Package pdftex.def Info: images/svmXor.png  used on input line 160.
+Package pdftex.def Info: images/svmXor.png  used on input line 166.
 (pdftex.def)             Requested size: 170.71652pt x 172.72842pt.
- [17
+ [18
 
- </home/lechenco/dev/TCC-Beamer/images/svmXor.png (PNG copy)>] [18
+ </home/lechenco/dev/TCC-Beamer/images/svmXor.png (PNG copy)>] [19
 
 ]
-<images/dagSVM.png, id=162, 661.47125pt x 618.31pt>
+<images/dagSVM.png, id=169, 661.47125pt x 618.31pt>
 File: images/dagSVM.png Graphic file (type png)
 <use images/dagSVM.png>
-Package pdftex.def Info: images/dagSVM.png  used on input line 187.
+Package pdftex.def Info: images/dagSVM.png  used on input line 193.
 (pdftex.def)             Requested size: 170.71652pt x 159.56804pt.
- [19
-
- </home/lechenco/dev/TCC-Beamer/images/dagSVM.png>]
-<images/btsSample.png, id=171, 168.63pt x 119.9682pt>
-File: images/btsSample.png Graphic file (type png)
-<use images/btsSample.png>
-Package pdftex.def Info: images/btsSample.png  used on input line 187.
-(pdftex.def)             Requested size: 199.16928pt x 141.69852pt.
  [20
 
- </home/lechenco/dev/TCC-Beamer/images/btsSample.png>] [21
+ </home/lechenco/dev/TCC-Beamer/images/dagSVM.png>]
+<images/btsSample.png, id=176, 168.63pt x 119.9682pt>
+File: images/btsSample.png Graphic file (type png)
+<use images/btsSample.png>
+Package pdftex.def Info: images/btsSample.png  used on input line 193.
+(pdftex.def)             Requested size: 199.16928pt x 141.69852pt.
+ [21
+
+ </home/lechenco/dev/TCC-Beamer/images/btsSample.png>] [22
 
 ]
-<images/waveAndWavelet.png, id=182, 889.3225pt x 324.21124pt>
+<images/waveAndWavelet.png, id=187, 889.3225pt x 324.21124pt>
 File: images/waveAndWavelet.png Graphic file (type png)
 <use images/waveAndWavelet.png>
-Package pdftex.def Info: images/waveAndWavelet.png  used on input line 203.
+Package pdftex.def Info: images/waveAndWavelet.png  used on input line 209.
 (pdftex.def)             Requested size: 284.52756pt x 103.72498pt.
- [22
+ [23
 
- </home/lechenco/dev/TCC-Beamer/images/waveAndWavelet.png>] [23
+ </home/lechenco/dev/TCC-Beamer/images/waveAndWavelet.png>] [24
 
-] [24
+] [25
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 244.
+(Font)              using `OT1/cmss/bx/n' instead on input line 250.
 
-[25
+[26
 
 ]
-<images/filterBankPacket.png, id=205, 646.66594pt x 310.91156pt>
+<images/filterBankPacket.png, id=210, 646.66594pt x 310.91156pt>
 File: images/filterBankPacket.png Graphic file (type png)
 <use images/filterBankPacket.png>
-Package pdftex.def Info: images/filterBankPacket.png  used on input line 244.
+Package pdftex.def Info: images/filterBankPacket.png  used on input line 250.
 (pdftex.def)             Requested size: 284.52756pt x 136.79675pt.
- [26
+ [27
 
- </home/lechenco/dev/TCC-Beamer/images/filterBankPacket.png>] [27
-
-] [28
+ </home/lechenco/dev/TCC-Beamer/images/filterBankPacket.png>] [28
 
 ] [29
 
 ] [30
 
+] [31
+
 ]
-<images/proposal.png, id=232, 622.57594pt x 527.72156pt>
+<images/proposal.png, id=238, 622.57594pt x 527.72156pt>
 File: images/proposal.png Graphic file (type png)
 <use images/proposal.png>
-Package pdftex.def Info: images/proposal.png  used on input line 298.
+Package pdftex.def Info: images/proposal.png  used on input line 294.
 (pdftex.def)             Requested size: 201.3943pt x 170.71652pt.
- [31
+ [32
 
- </home/lechenco/dev/TCC-Beamer/images/proposal.png>] [32
-
-] [33
+ </home/lechenco/dev/TCC-Beamer/images/proposal.png>] [33
 
 ] [34
 
 ] [35
 
+] [36
+
+] [37
+
 ]
-<images/waveletProposal.png, id=260, 619.56468pt x 357.58594pt>
+<images/waveletProposal.png, id=272, 619.56468pt x 357.58594pt>
 File: images/waveletProposal.png Graphic file (type png)
 <use images/waveletProposal.png>
-Package pdftex.def Info: images/waveletProposal.png  used on input line 324.
+Package pdftex.def Info: images/waveletProposal.png  used on input line 338.
 (pdftex.def)             Requested size: 298.75394pt x 172.425pt.
- [36
+ [38
 
- </home/lechenco/dev/TCC-Beamer/images/waveletProposal.png>] [37
-
-] [38
-
-] [39
+ </home/lechenco/dev/TCC-Beamer/images/waveletProposal.png>] [39
 
 ] [40
 
 ] [41
 
+] [42
+
+] [43
+
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 392.
+(hyperref)                removing `\translate ' on input line 406.
 
-(/home/lechenco/dev/TCC-Beamer/demo.bbl) [42
+(/home/lechenco/dev/TCC-Beamer/demo.bbl) [44
 
  </usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1064,11 +1068,11 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 \tf@snm=\write8
 \openout8 = `demo.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 402.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 402.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 416.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 416.
  (/home/lechenco/dev/TCC-Beamer/demo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 402.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 402.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 416.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 416.
 Package rerunfilecheck Info: File `demo.out' has not changed.
 (rerunfilecheck)             Checksum: E3A9903B4F6B859A497CF8FB26DABE8C;320.
 
@@ -1077,18 +1081,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 32241 strings out of 481239
- 779364 string characters out of 5920378
+ 32278 strings out of 481239
+ 780297 string characters out of 5920378
  1164730 words of memory out of 5000000
- 46705 multiletter control sequences out of 15000+600000
- 539331 words of font info for 49 fonts, out of 8000000 for 9000
+ 46737 multiletter control sequences out of 15000+600000
+ 539673 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,13n,103p,1857b,771s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb>
-Output written on /home/lechenco/dev/TCC-Beamer/demo.pdf (42 pages, 715551 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb>
+Output written on /home/lechenco/dev/TCC-Beamer/demo.pdf (44 pages, 721018 bytes).
 PDF statistics:
- 362 PDF objects out of 1000 (max. 8388607)
- 280 compressed objects within 3 object streams
- 94 named destinations out of 1000 (max. 500000)
+ 378 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 98 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 

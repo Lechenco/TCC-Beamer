@@ -51,6 +51,12 @@ Cristiano Marcos Agulhari}
   cardiovasculares.
 \end{frame}
 
+\begin{frame}{Objetivo}
+
+  
+
+\end{frame}
+
 \section{Fundamentação Teórica}
 
 \begin{frame}{Eletrocardiograma}
@@ -252,12 +258,12 @@ Cristiano Marcos Agulhari}
       \begin{tabulary}{\textwidth}{|C|C|}
           \hline
           Trabalho                               & Técnica   \\ \hline
-          Govindan, Deng e Power (1997)  & Coeficientes Wavelet + Redes Neurais                                                      \\ \hline
-          Zhao e Zhang (2005)        & Coeficientes Wavelet + SVM  + Modelagem Autorregressiva     \\ \hline
+          Govindan, Deng e Power (1997)  & Wavelet + Redes Neurais                                                      \\ \hline
+          Zhao e Zhang (2005)        & Wavelet + SVM  + Modelagem Autorregressiva     \\ \hline
           Mora e Amaya (2012)         & Entropia de Shannon + Complexidade de Lempel-Ziv + SVM-OAO assimétrica   \\ \hline
           Rua et al. (2012)           & Energia Wavelet + Redes Neurais                                                                                      \\ \hline
-          Azariadi et al. (2016)          & Coeficientes Wavelet +   SVM            \\ \hline
-          Tuncer et al. (2019)      & Decomposição Wavelet +  Localização de padrões  locais hexadecimais +  KNN  \\ \hline
+          Azariadi et al. (2016)          & Wavelet +   SVM            \\ \hline
+          Tuncer et al. (2019)      & Wavelet +  Localização de padrões  locais hexadecimais +  KNN  \\ \hline
       \end{tabulary}
     \end{table}
   }
@@ -280,21 +286,29 @@ Cristiano Marcos Agulhari}
 \section{Proposta}
 
 \begin{frame}{Proposta}
-  \only<1>{
-    \begin{figure}[]
-        \centering
-        \includegraphics[height=6cm]{images/proposal.png}
-        \caption{Descrição do Método que será utilizado}
-      \end{figure}
-  }
-  
-  \only<2>{
-    Bases de dados
-    \begin{itemize}
-      \item MIT-BIH Arrhythmia Database (mitdb)
-      \item MIT-BIH Normal Sinus Rhythm Database (nsrdb)
-    \end{itemize}
-  }
+  \begin{figure}[]
+    \centering
+    \includegraphics[height=6cm]{images/proposal.png}
+    \caption{Descrição do Método que será utilizado}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Bases de Dados}
+  Bases de dados
+  \begin{itemize}
+    \item MIT-BIH Arrhythmia Database (mitdb)
+    \only<2>{
+      \begin{itemize}
+        \item Trechos de arritmia
+        \item Trechos saudáveis 
+      \end{itemize}
+    }
+    \item MIT-BIH Normal Sinus Rhythm Database (nsrdb)
+    \only<2>{
+      \begin{itemize}
+        \item Trechos saudáveis
+      \end{itemize}
+  }  \end{itemize}
 \end{frame}
 
 \begin{frame}{Pré-processamento}
@@ -373,7 +387,7 @@ Cristiano Marcos Agulhari}
       Data        & Atividade                                                                                    \\ \hline
       14/Agosto   & \sout{Selecionar trechos relevantes dos sinais biológicos com base nas anotações do banco de dados} \\ \hline
       28/Agosto   & \sout{Realizar o janelamento e padronização destes trechos                                        } \\ \hline
-      11/Setembro & Extrair Energias Wavelet                                                                     \\ \hline
+      11/Setembro & \sout{ Extrair Energias Wavelet                                                                   } \\ \hline
       02/Outubro  & Realizar Classificações                                                                      \\ \hline
       23/Outubro  & Agrupar Resultados                                                                           \\ \hline
       20/Novembro & Descrever Resultados e Conclusões finais                                                     \\ \hline
