@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{burrus_introduction_1998}
+C.~Burrus, R.~Gopinath, and H.~Guo.
+\newblock {\em Introduction to Wavelets and Wavelet Transform—A Primer},
+  volume~67.
+\newblock 01 1998.
+
 \bibitem{faziludeen_ecg_2013}
 S.~Faziludeen and P.~V. Sabiq.
 \newblock {ECG} beat classification using wavelets and {SVM}.
@@ -10,5 +16,14 @@ S.~Faziludeen and P.~V. Sabiq.
 S.~Haykin.
 \newblock {\em Neural Networks and Learning Machines, 3/E}.
 \newblock Pearson Education India, 2010.
+
+\bibitem{strang_wavelets_1996}
+G.~Strang and T.~Nguyen.
+\newblock {\em Wavelets and filter banks}.
+\newblock SIAM, 1996.
+
+\bibitem{who_cardiovascular_2017}
+WHO.
+\newblock Cardiovascular diseases ({CVDs}), May 2017.
 
 \end{thebibliography}
