@@ -15,10 +15,12 @@
 \usepackage{xspace}
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 
+\usepackage{multicol}
+
 \title{Detecção de artefatos de arritmia utilizando Máquinas de Vetores de Suporte e Coeficientes de Energia Wavelet}
 \subtitle{Proposta de TCC}
 % \date{\today}
-\date{2020}
+\date{2021}
 \author{Gabriel Lechenco Vargas Pereira \\
 Cristiano Marcos Agulhari}
 \institute{Universidade Tecnológica Federal do Paraná - UTFPR}
@@ -29,10 +31,10 @@ Cristiano Marcos Agulhari}
 
 \maketitle
 
-\begin{frame}{Sumário}
-  \setbeamertemplate{section in toc}[sections numbered]
-  \tableofcontents[hideallsubsections]
-\end{frame}
+% \begin{frame}{Sumário}
+%   \setbeamertemplate{section in toc}[sections numbered]
+%   \tableofcontents[hideallsubsections]
+% \end{frame}
 
 \section{Introdução}
 
@@ -61,7 +63,7 @@ Cristiano Marcos Agulhari}
 
 \begin{frame}{Objetivos Específicos}
 
-  Dessa forma, serão utilizados:
+  % Dessa forma, serão utilizados:
   \begin{itemize}
     \item Identificar e recortar os trechos de sinal ECG relevantes
     \item Utilizar como vetor de características coeficientes de energia wavelet
@@ -91,7 +93,7 @@ Cristiano Marcos Agulhari}
 
 \begin{frame}{Exemplo Eletrocardiograma}
   \begin{figure}
-    \includegraphics[width=10.5cm]{images/normal.png}
+    \includegraphics[width=10.5cm]{images/NormalBeatSample.jpg}
     \caption{Trecho batimentos ritmo normal}
   \end{figure}
 
@@ -99,8 +101,22 @@ Cristiano Marcos Agulhari}
 
 \begin{frame}{Exemplo Eletrocardiograma}
   \begin{figure}
-    \includegraphics[width=10.5cm]{images/artrial_fibri.png}
+    \includegraphics[width=10.5cm]{images/AtrialFibrilaionSample.jpg}
     \caption{Trecho batimentos com fibrilação atrial}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Exemplo Eletrocardiograma}
+  \begin{figure}
+    \includegraphics[width=10.5cm]{images/BigeminySample.jpg}
+    \caption{Trecho batimentos com bigeminia ventricular}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Exemplo Eletrocardiograma}
+  \begin{figure}
+    \includegraphics[width=10.5cm]{images/SinusBradicardiaSample.jpg}
+    \caption{Trecho batimentos com bradicardia sinusal}
   \end{figure}
 \end{frame}
 
@@ -124,30 +140,30 @@ Cristiano Marcos Agulhari}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Máquinas de Vetores de Suporte (SVM)}
-  Vantagens 
-  \begin{itemize}
-    \item Otimização de natureza convexa
-    \item Apresenta um unico mínimo global para problemas lineares
-    \item Consegue bons resultados com poucos exemplos
-  \end{itemize}
+% \begin{frame}{Máquinas de Vetores de Suporte (SVM)}
+%   Vantagens 
+%   \begin{itemize}
+%     \item Otimização de natureza convexa
+%     \item Apresenta um unico mínimo global para problemas lineares
+%     \item Consegue bons resultados com poucos exemplos
+%   \end{itemize}
 
-  Desvantagens
-  \begin{itemize}
-    \item A princípio resolve apenas problemas lineares
-    \item Classificação binária
-  \end{itemize}
-\end{frame}
+%   Desvantagens
+%   \begin{itemize}
+%     \item A princípio resolve apenas problemas lineares
+%     \item Classificação binária
+%   \end{itemize}
+% \end{frame}
 
-\begin{frame}{SVM's e problemas não lineares}
-    \textbf{Teorema de Cover}
-    \begin{quote}
-      Dado um problema de classificação de padrões complexo, ao lançá-lo em 
-      um espaço com muitas dimensões é mais provável que este seja linearmente 
-      separável do que em um espaço com poucas dimensões, desde que o espaço não seja densamente preenchido.
-      \cite{haykin_neural_2010}
-    \end{quote}
-\end{frame}
+% \begin{frame}{SVM's e problemas não lineares}
+%     \textbf{Teorema de Cover}
+%     \begin{quote}
+%       Dado um problema de classificação de padrões complexo, ao lançá-lo em 
+%       um espaço com muitas dimensões é mais provável que este seja linearmente 
+%       separável do que em um espaço com poucas dimensões, desde que o espaço não seja densamente preenchido.
+%       \cite{haykin_neural_2010}
+%     \end{quote}
+% \end{frame}
 
 \begin{frame} {SVM's e problemas não lineares}
   A adição de diferentes kernels possibilita uma maior flexibilidade do algoritmo de
@@ -167,7 +183,7 @@ Cristiano Marcos Agulhari}
 \end{frame}
 
 \begin{frame}{SVM's e problemas não binários}
-  Técnicas pra classificação não binária
+  Técnicas para classificação não binária
   \begin{itemize}
     \item \textit{One Against All} (OAA)
     \item \textit{One Against One} (OAO)
@@ -177,7 +193,7 @@ Cristiano Marcos Agulhari}
 
 \end{frame}
 
-\section*{Estração de Características (Wavelet)}
+\section*{Extração de Características (Wavelet)}
 
 
 \begin{frame} {Wavelets}
@@ -197,13 +213,25 @@ Cristiano Marcos Agulhari}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Multirresolução}
+\begin{frame}{Transformada de Wavelet Discreta}
 
-  A Transformada de Wavelet Discreta prioriza naturalmente uma melhor precisão em identificar 
-  as baixas frequências que compõem o sinal e uma melhor localização no tempo das altas 
-  frequências que causam fenômenos e perturbações momentâneas. \cite{strang_wavelets_1996}
+  É possível reconstruir um sinal $f(t)$ partindo de uma 
+  única função wavelet mãe $\psi$ e seus coeficientes de escala e translação $a_{j, k}$:
 
+  \begin{equation}
+    f(t) = \sum_{j, k} a_{j, k} \psi_{j, k} (t)
+    \nonumber
+  \end{equation}
+  
 \end{frame}
+
+% \begin{frame}{Multirresolução}
+
+%   A Transformada de Wavelet Discreta prioriza naturalmente uma melhor precisão em identificar 
+%   as baixas frequências que compõem o sinal e uma melhor localização no tempo das altas 
+%   frequências que causam fenômenos e perturbações momentâneas. \cite{strang_wavelets_1996}
+
+% \end{frame}
 
 \begin{frame}{\textit{Filter Bank} e \textit{Wavelet Packets}}
 
@@ -214,39 +242,39 @@ Cristiano Marcos Agulhari}
   \end{figure}
 \end{frame}
 
-\section{Revisão de Literatura}
+% \section{Revisão de Literatura}
 
-\begin{frame}{Trabalhos Relacionados}
-  \begin{table}
-    \begin{tabulary}{\textwidth}{|C|C|}
-        \hline
-        Trabalho                               & Técnica   \\ \hline
-        Govindan, Deng e Power (1997)  & Wavelet + Redes Neurais                                                      \\ \hline
-        Zhao e Zhang (2005)        & Wavelet + SVM  + Modelagem Autorregressiva     \\ \hline
-        Mora e Amaya (2012)         & Entropia de Shannon + Complexidade de Lempel-Ziv + SVM-OAO assimétrica   \\ \hline
-        Rua et al. (2012)           & Energia Wavelet + Redes Neurais                                                                                      \\ \hline
-        Azariadi et al. (2016)          & Wavelet +   SVM            \\ \hline
-        Tuncer et al. (2019)      & Wavelet +  Localização de padrões  locais hexadecimais +  KNN  \\ \hline
-    \end{tabulary}
-  \end{table}
-\end{frame}
+% \begin{frame}{Trabalhos Relacionados}
+%   \begin{table}
+%     \begin{tabulary}{\textwidth}{|C|C|}
+%         \hline
+%         Trabalho                               & Técnica   \\ \hline
+%         Govindan, Deng e Power (1997)  & Wavelet + Redes Neurais                                                      \\ \hline
+%         Zhao e Zhang (2005)        & Wavelet + SVM  + Modelagem Autorregressiva     \\ \hline
+%         Mora e Amaya (2012)         & Entropia de Shannon + Complexidade de Lempel-Ziv + SVM-OAO assimétrica   \\ \hline
+%         Rua et al. (2012)           & Energia Wavelet + Redes Neurais                                                                                      \\ \hline
+%         Azariadi et al. (2016)          & Wavelet +   SVM            \\ \hline
+%         Tuncer et al. (2019)      & Wavelet +  Localização de padrões  locais hexadecimais +  KNN  \\ \hline
+%     \end{tabulary}
+%   \end{table}
+% \end{frame}
 
-\begin{frame}{Trabalhos Relacionados}
-  \begin{tabulary}{\textwidth}{|C|c|c|c|}
-    \hline
-    Trabalho                                                                          & Nº de classes & \begin{tabular}[c]{@{}l@{}}Nº de Exemplos \\no treinamento \end{tabular} & Acurácia       \\ \hline
-    Govindan, Deng e Power (1997)                                            & $4$                                                            &                      $10$                            & $77\% \pm 9\%$ \\ \hline
-    Zhao e Zhang (2005)                                                  & $6$                                                           &                 $7940$                                & $99,68\%$      \\ \hline
-    Mora e Amaya (2012)                                                   & $5$                                                            &                $637$                                 & $90,72\%$      \\ \hline
-    Rua et al. (2012)                                                     & $2$                                                           &               -                               & $99.46\%$      \\ \hline
-    Azariadi et al. (2016)                                                    & $2$                                                           &                      104581                         & $97\%$         \\ \hline
-    Tuncer et al. (2019)                                                & $17$                                                        &                        -                        & $95.0\%$       \\ \hline
-  \end{tabulary}
-\end{frame}
+% \begin{frame}{Trabalhos Relacionados}
+%   \begin{tabulary}{\textwidth}{|C|c|c|c|}
+%     \hline
+%     Trabalho                                                                          & Nº de classes & \begin{tabular}[c]{@{}l@{}}Nº de Exemplos \\no treinamento \end{tabular} & Acurácia       \\ \hline
+%     Govindan, Deng e Power (1997)                                            & $4$                                                            &                      $10$                            & $77\% \pm 9\%$ \\ \hline
+%     Zhao e Zhang (2005)                                                  & $6$                                                           &                 $7940$                                & $99,68\%$      \\ \hline
+%     Mora e Amaya (2012)                                                   & $5$                                                            &                $637$                                 & $90,72\%$      \\ \hline
+%     Rua et al. (2012)                                                     & $2$                                                           &               -                               & $99.46\%$      \\ \hline
+%     Azariadi et al. (2016)                                                    & $2$                                                           &                      104581                         & $97\%$         \\ \hline
+%     Tuncer et al. (2019)                                                & $17$                                                        &                        -                        & $95.0\%$       \\ \hline
+%   \end{tabulary}
+% \end{frame}
 
-\section{Proposta}
+\section{Metodologia}
 
-\begin{frame}{Proposta}
+\begin{frame}{Metodologia}
   \begin{figure}[]
     \centering
     \includegraphics[height=6cm]{images/proposal.png}
@@ -280,11 +308,11 @@ Cristiano Marcos Agulhari}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Extração de características}
-  Cada trecho de sinal será decomposto até o quarto nível, no final a folha 
-  mais a esquerda será decomposta por mais dois níveis. Será utilizada a 
-  função \textit{Daubechies} com suporte 3, por se adequar bem aos sinais cardíacos.
-\end{frame}
+% \begin{frame}{Extração de características}
+%   Cada trecho de sinal será decomposto até o quarto nível, no final a folha 
+%   mais a esquerda será decomposta por mais dois níveis. Será utilizada a 
+%   função \textit{Daubechies} com suporte 3, por se adequar bem aos sinais cardíacos.
+% \end{frame}
 
 \begin{frame}{Estração de Características}
   \begin{figure}[]
@@ -298,51 +326,145 @@ Cristiano Marcos Agulhari}
     Máquinas de Vetores de Suporte (SVM)
     \begin{itemize}
       \item Aprendizado supervisionado
+      \item Kernel Gaussiano
+      \item \textit{K-fold} e \textit{Cross Validation}
       \item Comparação entre técnicas de classificação multiclasses
     \end{itemize}
 
-    \begin{table}
-      \centering
-    \begin{tabular}{|c|c|}
-      \hline
-      Sigla   & Classe                        \\ \hline
-      N       & Batimentos com ritmos normais \\ \hline
-      AFIB    & Fibrilação Atrial             \\ \hline
-      SBR     & Bradicardia Sinusal           \\ \hline
-      B       & Bigeminia Ventricular         \\ \hline
+  %   \begin{table}
+  %     \centering
+  %   \begin{tabular}{|c|c|}
+  %     \hline
+  %     Sigla   & Classe                        \\ \hline
+  %     N       & Batimentos com ritmos normais \\ \hline
+  %     AFIB    & Fibrilação Atrial             \\ \hline
+  %     SBR     & Bradicardia Sinusal           \\ \hline
+  %     B       & Bigeminia Ventricular         \\ \hline
 
+  %   \end{tabular}
+  % \end{table}
+\end{frame}
+
+\section{Resultados}
+
+\begin{frame}{Precisão vs. \textit{Recall} }
+  
+    $$Precision = \frac{TP}{TP + FP}$$
+
+    $$Recall = \frac{TP}{TP + FN}$$
+  
+\end{frame}
+
+\begin{frame}{Matriz de Confusão}
+  \begin{figure}[]
+    \centering
+    \includegraphics[width=8cm]{images/OAAConfusion.png}
+    \caption{Matriz de Confusão para o modelo \textit{One Against All}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Matriz de Confusão}
+  \begin{figure}[]
+    \centering
+    \includegraphics[width=8cm]{images/OAOConfusion.png}
+    \caption{Matriz de Confusão para o modelo \textit{One Against One}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Matriz de Confusão}
+  \begin{figure}[]
+    \centering
+    \includegraphics[width=8cm]{images/DAGSVMConfusion.png}
+    \caption{Matriz de Confusão para o modelo DAGSVM}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Matriz de Confusão}
+  \begin{figure}[]
+    \centering
+    \includegraphics[width=8cm]{images/BTSConfusion.png}
+    \caption{Matriz de Confusão para o modelo \textit{Binary Tree of SVM}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Precisão vs. \textit{Recall} }
+  \begin{table}
+    \centering
+    \begin{tabular}{@{}llllll@{}}
+      \toprule
+      & AFIB   & B      & N      & SBR    & Average \\ \midrule
+      One Against All      & 83.0\% & 80.4\% & 88.4\% & 87.9\% & 84.9\%  \\
+      One Against One      & 74.6\% & 77.4\% & 82.8\% & 94.8\% & 82.4\%  \\
+      Direct Acyclic Graph & 71.1\% & 77.4\% & 88.7\% & 94.8\% & 83.0\%  \\
+      Binary Tree of SVM   & 78.3\% & 78.9\% & 88.9\% & 93.3\% & 84.9\%  \\ \bottomrule
     \end{tabular}
-  \end{table}
+    \caption{Resumo da Precisão para cada um dos modelos testados.}
+\end{table}
+
 \end{frame}
 
-\begin{frame}{Cronograma}
-  \only<1>{
-    \begin{tabulary}{\textwidth}{|l|C|}
-      \hline
-      Data        & Atividade                                                                                    \\ \hline
-      14/Agosto   & Selecionar trechos relevantes dos sinais biológicos com base nas anotações do banco de dados \\ \hline
-      28/Agosto   & Realizar o janelamento e padronização destes trechos                                         \\ \hline
-      11/Setembro & Extrair Energias Wavelet                                                                     \\ \hline
-      02/Outubro  & Realizar Classificações                                                                      \\ \hline
-      23/Outubro  & Agrupar Resultados                                                                           \\ \hline
-      20/Novembro & Descrever Resultados e Conclusões finais                                                     \\ \hline
-      \end{tabulary}
-  }
-  \only<2>{
-    \begin{tabulary}{\textwidth}{|l|C|}
-      \hline
-      Data        & Atividade                                                                                    \\ \hline
-      14/Agosto   & \sout{Selecionar trechos relevantes dos sinais biológicos com base nas anotações do banco de dados} \\ \hline
-      28/Agosto   & \sout{Realizar o janelamento e padronização destes trechos                                        } \\ \hline
-      11/Setembro & \sout{ Extrair Energias Wavelet                                                                   } \\ \hline
-      02/Outubro  & \textbf{Realizar Classificações                                                                   } \\ \hline
-      23/Outubro  & Agrupar Resultados                                                                           \\ \hline
-      20/Novembro & Descrever Resultados e Conclusões finais                                                     \\ \hline
-      \end{tabulary}
-  }
+\begin{frame}{Precisão vs. \textit{Recall} }
+  \begin{table}
+    \centering
+    \begin{tabular}{@{}llllll@{}}
+      \toprule
+                         & AFIB   & B      & N      & SBR    & Average \\ 
+    \midrule
+    One Against All      & 73.3\% & 61.7\% & 63.3\% & 85.0\% & 70.8\%  \\ 
+    One Against One      & 88.3\% & 68.3\% &  80.0\% & 91.7\% & 82.1\%  \\ 
+    Direct Acyclic Graph & 90.0\% & 68.3\% & 78.3\% & 91.7\% & 82.1\%  \\ 
+    Binary Tree of SVM   & 90.0\% & 75.0\% & 80.0\% & 93.3\% & 84.6\%  \\ 
+    \bottomrule
+    \end{tabular}
+    \caption{Resumo da \textit{Recall} para cada um dos modelos testados.}
+    
+\end{table}
+
 \end{frame}
 
-\section{Considerações Finais}
+
+% \begin{frame}{Cronograma}
+%   \only<1>{
+%     \begin{tabulary}{\textwidth}{|l|C|}
+%       \hline
+%       Data        & Atividade                                                                                    \\ \hline
+%       14/Agosto   & Selecionar trechos relevantes dos sinais biológicos com base nas anotações do banco de dados \\ \hline
+%       28/Agosto   & Realizar o janelamento e padronização destes trechos                                         \\ \hline
+%       11/Setembro & Extrair Energias Wavelet                                                                     \\ \hline
+%       02/Outubro  & Realizar Classificações                                                                      \\ \hline
+%       23/Outubro  & Agrupar Resultados                                                                           \\ \hline
+%       20/Novembro & Descrever Resultados e Conclusões finais                                                     \\ \hline
+%       \end{tabulary}
+%   }
+%   \only<2>{
+%     \begin{tabulary}{\textwidth}{|l|C|}
+%       \hline
+%       Data        & Atividade                                                                                    \\ \hline
+%       14/Agosto   & \sout{Selecionar trechos relevantes dos sinais biológicos com base nas anotações do banco de dados} \\ \hline
+%       28/Agosto   & \sout{Realizar o janelamento e padronização destes trechos                                        } \\ \hline
+%       11/Setembro & \sout{ Extrair Energias Wavelet                                                                   } \\ \hline
+%       02/Outubro  & \textbf{Realizar Classificações                                                                   } \\ \hline
+%       23/Outubro  & Agrupar Resultados                                                                           \\ \hline
+%       20/Novembro & Descrever Resultados e Conclusões finais                                                     \\ \hline
+%       \end{tabulary}
+%   }
+% \end{frame}
+
+\section{Conclusão}
+
+\begin{frame}{Conclusão}
+  Trabalhos Futuros
+  \begin{itemize}
+    \item Combinar os coeficientes de energia Wavelet com novas características
+    \item Investigar classificações equivocadas
+  \end{itemize}
+
+  Considerações Finais
+  \begin{itemize}
+    \item A \textit{Binary Tree of SVM} se destacou das demais
+    \item A solução proposta alcançou resultados favoráveis
+  \end{itemize}
+\end{frame}
 
  {\setbeamercolor{palette primary}{fg=white, bg=mDarkTeal}
  \begin{frame}[standout]
@@ -360,6 +482,8 @@ Cristiano Marcos Agulhari}
 
 \end{frame}
 
+
+
 \begin{frame}
   \only<1>{\textit{Directed Acyclic Graph SVM} (DAGSVM)
   \begin{figure}[]
@@ -375,16 +499,6 @@ Cristiano Marcos Agulhari}
 }
 \end{frame}
 
-\begin{frame}{Transformada de Wavelet Discreta}
 
-  É possível reconstruir um sinal $f(t)$ partindo de uma 
-  única função wavelet mãe $\psi$ e seus coeficientes de escala e translação $a_{j, k}$:
-
-  \begin{equation}
-    f(t) = \sum_{j, k} a_{j, k} \psi_{j, k} (t)
-    \nonumber
-  \end{equation}
-  
-\end{frame}
 
 \end{document}
